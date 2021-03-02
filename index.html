@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+  <meta name="description"
+    content="Locates ip address on a street map using geo location of latitude and longitude. Search using ip or domain." />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/pin.png" />
+
+  <title>IP Address Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+    }
+
+    .attribution a {
+      color: rgb(0, 108, 163);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="map-container" id="map-container"></div>
+
+  <h2 class="app-title">IP Address Tracker</h2>
+
+  <div class="input-container-parent">
+    <div class="input-container">
+      <form>
+        <span><input type="text" class="ip-input" id="ip-input" placeholder="Search IP address or domain"
+            onclick="this.select();" autocomplete="on" /><button type="submit" class="submit" id="submit"
+            title="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+              <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" /></svg></button></span>
+      </form>
+    </div>
+  </div>
+
+  <div class="results-container-parent">
+    <div class="results-container">
+      <a class="hide-show" id="hide-show" href="#" title="Hide details">Hide</a>
+      <div class="ip-box result-box" id="ip-box">
+        <h5>IP ADDRESS</h5>
+        <div class="ip-address">
+          <h2 id="ip-address"></h2>
+        </div>
+      </div>
+      <div class="vertical-bar"></div>
+
+      <div class="location-box result-box" id="location-box">
+        <h5>LOCATION</h5>
+        <div class="location">
+          <h2 id="location"></h2>
+        </div>
+      </div>
+      <div class="vertical-bar"></div>
+
+      <div class="timezone-box result-box" id="timezone-box">
+        <h5>TIMEZONE</h5>
+        <div class="timezone">
+          <!-- add offset value dynamically using the API -->
+          <h2 id="timezone"></h2>
+          <h2 id="offset"></h2>
+        </div>
+      </div>
+      <div class="vertical-bar"></div>
+
+      <div class="isp-box result-box" id="isp-box">
+        <h5>ISP</h5>
+        <div class="isp">
+          <h2 id="isp"></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution">Challenge by <a class="hlink" href="https://www.frontendmentor.io?ref=challenge"
+      target="_blank">Frontend Mentor</a>. Coded by <a class="hlink" href="#">Les Quines</a>.
+    <!-- Icon made by <a
+      href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
+      title="Flaticon"> www.flaticon.com</a> -->
+  </div>
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <!-- JQuery uncomment if using jquery ajax() -->
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+
+  <!-- node_modules require -->
+  <!-- <script src="node_modules/require"></script> -->
+
+  <!-- Script -->
+  <!-- <script type="text/javascript" src="config.js"></script> -->
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
