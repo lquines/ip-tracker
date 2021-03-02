@@ -17,6 +17,7 @@ let popupMsg = document.createElement("div");
 let mymap;
 let marker;
 const zoomSize = 15;
+const proxyURL = "https://quicors.herokuapp.com/";
 // const mapKey = MAPBOX_KEY; // If using Mapbox, not needed for OSM
 
 // Load
@@ -27,7 +28,7 @@ function locateIP() {
 	let ipAddress = input.value;
 	const xhr = new XMLHttpRequest(),
 		method = "GET",
-		url = `http://ip-api.com/json/${ipAddress}?fields=33580031`;
+		url = proxyURL + `http://ip-api.com/json/${ipAddress}?fields=33580031`;
 
 	xhr.open(method, url, true);
 	xhr.onreadystatechange = function () {
